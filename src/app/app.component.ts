@@ -18,6 +18,24 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+
+    // set the value of whole form with setValue function:
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'male'
+    // });                    ^this is not best approach because it rewrite the whole form
+
+    // Better approach:
+    this.signupForm.form.patchValue({ //patchValue only over write specific certain controls:
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
   //should be trigger whenever form submitted by user
