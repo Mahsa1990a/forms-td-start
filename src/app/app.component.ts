@@ -64,5 +64,9 @@ export class AppComponent {
     this.user.secretQusetion = this.signupForm.value.secret; //secret the name in select
     this.user.answer = this.signupForm.value.questionAnswer;
     this.user.gender = this.signupForm.value.gender;
+
+    // After submit, reset the form:
+    //for reseting specific parts we can pass obj inside reset same as setValue
+    this.signupForm.reset();
   }
 }
