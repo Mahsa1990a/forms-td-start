@@ -67,6 +67,19 @@
         </div>
         <p>Your reply: {{ answer }}</p>
 
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <!-- make this input control with ngModel -->
+            <input
+              type="radio"
+              name="gender"
+              ngModel
+              [value]="gender"
+              required
+            >{{ gender }}
+          </label>
+        </div>
+
         <!-- Add property binding if form is not vealid s= => disable button -->
         <button
           class="btn btn-primary"

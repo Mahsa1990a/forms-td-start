@@ -13,6 +13,7 @@ export class AppComponent {
 
   defaultQuestion = 'pet'; //for using in select
   answer = '';
+  genders = ["male", "female"];
 
 
   suggestUserName() {
