@@ -13,8 +13,16 @@ export class AppComponent {
 
   defaultQuestion = 'pet'; //for using in select
   answer = '';
-  genders = ["male", "female"];
+  genders = ["Male", "Female"];
+  user = {
+    username: '',
+    email: '',
+    secretQusetion: '',
+    answer: '',
+    gender: ''
+  }; // after submitting the form, want to update user obj(inside onSubmit method)
 
+  submitted = false;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -46,6 +54,15 @@ export class AppComponent {
   // }
 
   onSubmit() {// with using @viewChild
-    console.log("signupForm => ", this.signupForm);
+    // console.log("signupForm => ", this.signupForm);
+
+    this.submitted = true;
+
+    // update user obj after submitting the form:
+    this.user.username = this.signupForm.value.userData.username;
+    this.user.email = this.signupForm.value.userData.email;
+    this.user.secretQusetion = this.signupForm.value.secret; //secret the name in select
+    this.user.answer = this.signupForm.value.questionAnswer;
+    this.user.gender = this.signupForm.value.gender;
   }
 }

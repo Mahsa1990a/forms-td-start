@@ -96,4 +96,16 @@
       </form>
     </div>
   </div>
+  <hr>
+  <!-- wants to input this when form submit -->
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data: </h3>
+      <p>Username: {{ user.username }}</p>
+      <p>Mail: {{ user.email }}</p>
+      <p>Secret Question: Your first {{ user.secretQusetion }}?</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
+    </div>
+  </div>
 </div>
