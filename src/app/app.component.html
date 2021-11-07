@@ -4,7 +4,11 @@
       <!-- for submitting form use  ngSubmit directive with event from ts-->
       <!-- #f => local refrence to <form>// after adding "ngForm => you're telling js give me access to this form you created automatically -->
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data">
+        <div
+          id="user-data"
+          ngModelGroup="userData"
+          #userDataaa="ngModelGroup"
+          >
           <div class="form-group">
             <label for="username">Username</label>
             <!-- Adding ngModel and name to show input is in a conroll of form -->
@@ -35,6 +39,9 @@
             <span class="help-block" *ngIf="!emailll.valid && emailll.touched">Please Enter a Valid Email!</span>
           </div>
         </div>
+
+        <p *ngIf="!userDataaa.valid && userDataaa.touched">User Data is invalid!</p>
+
         <div class="form-group">
           <label for="secret">Secret Questions</label>
            <!-- Adding ngModel and name to show select(which is another type of input) is in a conroll of form -->
